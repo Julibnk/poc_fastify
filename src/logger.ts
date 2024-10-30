@@ -2,7 +2,7 @@ import { FastifyServerOptions } from 'fastify';
 import { pino } from 'pino';
 import { env } from './env.js';
 
-export function getRequestLogger(): FastifyServerOptions['logger'] {
+export function getRequestLogger(): FastifyServerOptions['loggerInstance'] {
   if (env.NODE_ENV === 'development') {
     return pino({
       level: env.LOG_LEVEL,
