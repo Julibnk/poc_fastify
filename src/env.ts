@@ -7,5 +7,4 @@ const envSchema = z.object({
   CORS: z.string().default(''),
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug']).default('error'),
 });
-
 export const env = envSchema.parse(process.env);
